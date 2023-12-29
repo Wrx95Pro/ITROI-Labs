@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it.nure.ua/album"
+        xmlns:sn="http://it.nure.ua/album" elementFormDefault="qualified">
+
+    <xs:element name="albums">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="album" type="sn:Album" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="id" type="sn:idInteger"/>
+
+    <xs:simpleType name="UUID">
+        <xs:restriction base="xs:string">
+            <xs:length value="36"/>
+            <xs:pattern value="^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="idInteger">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999999999"/>
+            <xs:fractionDigits value="0"/>
+            <xs:totalDigits value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Entity">
+        <xs:attribute name="id" type="sn:idInteger" use="required"/>
+        <xs:attribute name="uuid" type="sn:UUID" use="optional"/>
+        <xs:attribute name="hidden" type="xs:boolean" use="optional" default="false"/>
+    </xs:complexType>
+
+    <xs:simpleType name="Base64String">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="20"/>
+            <xs:maxLength value="10000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Image">
+        <xs:complexContent>
+            <xs:extension base="sn:Entity">
+                <xs:choice>
+                    <xs:element name="image_url" type="xs:string"/>
+                    <xs:element name="image_content" type="sn:Base64String"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="Date">
+        <xs:restriction base="xs:dateTime">
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Author">
+        <xs:complexContent>
+            <xs:extension base="sn:Entity">
+                <xs:all>
+                    <xs:element name="username" type="xs:string"/>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Images">
+        <xs:sequence>
+            <xs:element name="image" type="sn:Image" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="AccessLevel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PRIVATE" />
+            <xs:enumeration value="LINK_ONLY" />
+            <xs:enumeration value="PUBLIC" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Album">
+        <xs:complexContent>
+            <xs:extension base="sn:Entity">
+                <xs:all>
+                    <xs:element name="header">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="120"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="text" type="xs:string"/>
+                    <xs:element name="images" type="sn:Images"/>
+                    <xs:element name="date" type="sn:Date"/>
+                    <xs:element name="created_by" type="sn:Author"/>
+                    <xs:element name="access_level" type="sn:AccessLevel"/>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

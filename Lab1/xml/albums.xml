@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="albums.xslt"?>
+<sn:albums xmlns:sn="http://it.nure.ua/album"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://it.nure.ua/album">
+	<sn:album id="1">
+		<sn:header>Summer 2019</sn:header>
+		<sn:text>from the good times</sn:text>
+		<sn:images>
+			<sn:image id="1">
+				<sn:image_url>res/summer19/img1.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="2">
+				<sn:image_url>res/summer19/img2.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="3">
+				<sn:image_url>res/summer19/img3.jpg</sn:image_url>
+			</sn:image>
+		</sn:images>
+		<sn:created_by id="1">
+			<sn:username>@longusername</sn:username>
+		</sn:created_by>
+		<sn:date>2019-09-15T20:30:00Z</sn:date>
+		<sn:access_level>LINK_ONLY</sn:access_level>
+	</sn:album>
+	<sn:album id="2">
+		<sn:header>My album</sn:header>
+		<sn:text>Album description</sn:text>
+		<sn:images>
+			<sn:image id="1">
+				<sn:image_url>res/shrek/img1.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="2">
+				<sn:image_url>res/shrek/img2.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="3">
+				<sn:image_url>res/shrek/img3.jpg</sn:image_url>
+			</sn:image>
+		</sn:images>
+		<sn:created_by id="1">
+			<sn:username>@mememe</sn:username>
+		</sn:created_by>
+		<sn:date>2020-10-16T20:30:00Z</sn:date>
+		<sn:access_level>PUBLIC</sn:access_level>
+	</sn:album>
+	<sn:album id="3">
+		<sn:header>Girls!</sn:header>
+		<sn:text>Pictures set</sn:text>
+		<sn:images>
+			<sn:image id="1">
+				<sn:image_url>res/girls/img1.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="2">
+				<sn:image_url>res/girls/img2.jpg</sn:image_url>
+			</sn:image>
+			<sn:image id="3">
+				<sn:image_url>res/girls/img3.jpg</sn:image_url>
+			</sn:image>
+		</sn:images>
+		<sn:created_by id="1">
+			<sn:username>@onetimeusername</sn:username>
+		</sn:created_by>
+		<sn:date>2021-11-17T20:30:00Z</sn:date>
+		<sn:access_level>PRIVATE</sn:access_level>
+	</sn:album>
+</sn:albums>
+
