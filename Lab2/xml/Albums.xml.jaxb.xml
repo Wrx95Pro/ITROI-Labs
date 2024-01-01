@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<albums xmlns="http://album.nure.ua/entity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://album.nure.ua/entity Albums.xsd">
+    <album Id="1">
+        <header>testHeader</header>
+        <text>testText</text>
+        <date>testDate</date>
+        <image Id="1">
+            <image_url>testUrl</image_url>
+        </image>
+        <created_by Id="1">
+            <username>testUsername</username>
+        </created_by>
+        <access_level>PUBLIC</access_level>
+    </album>
+</albums>

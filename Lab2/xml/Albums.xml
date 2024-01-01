@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="albums.xslt"?>
+<albums xmlns="http://album.nure.ua/entity"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://album.nure.ua/entity Albums.xsd">
+    <album Id="1">
+        <header>Summer 2019</header>
+        <text>from the good times</text>
+        <date>August 2019</date>
+        <image Id="1">
+            <image_url>res/summer19/img1.jpg</image_url>
+        </image>
+        <image Id="2">
+            <image_url>res/summer19/img2.jpg</image_url>
+        </image>
+        <image Id="3">
+            <image_url>res/summer19/img3.jpg</image_url>
+        </image>
+        <created_by Id="1">
+            <username>@longusername</username>
+        </created_by>
+        <access_level>LINK_ONLY</access_level>
+    </album>
+    <album Id="2">
+        <header>My album</header>
+        <text>Album description</text>
+        <date>November 2001</date>
+        <image Id="1">
+            <image_url>res/shrek/img1.jpg</image_url>
+        </image>
+        <image Id="2">
+            <image_url>res/shrek/img2.jpg</image_url>
+        </image>
+        <image Id="3">
+            <image_url>res/shrek/img3.jpg</image_url>
+        </image>
+        <created_by Id="1">
+            <username>@mememe</username>
+        </created_by>
+        <access_level>PUBLIC</access_level>
+    </album>
+    <album Id="3">
+        <header>Girls!</header>
+        <text>Pictures set</text>
+        <date>November 2021</date>
+        <image Id="1">
+            <image_url>res/girls/img1.jpg</image_url>
+        </image>
+        <image Id="2">
+            <image_url>res/girls/img2.jpg</image_url>
+        </image>
+        <image Id="3">
+            <image_url>res/girls/img3.jpg</image_url>
+        </image>
+        <created_by Id="1">
+            <username>@onetimeusername</username>
+        </created_by>
+        <access_level>PRIVATE</access_level>
+    </album>
+</albums>
