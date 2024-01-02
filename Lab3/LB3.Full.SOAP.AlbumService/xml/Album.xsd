@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://ua.nure.album.nure.ua/entity"
+           xmlns:tns="http://album.nure.ua/entity" elementFormDefault="qualified">
+
+    <xs:include schemaLocation="Entity.xsd"/>
+    <xs:include schemaLocation="Image.xsd"/>
+    <xs:include schemaLocation="Author.xsd"/>
+
+
+    <xs:simpleType name="AccessLevel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PRIVATE" />
+            <xs:enumeration value="LINK_ONLY" />
+            <xs:enumeration value="PUBLIC" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="album">
+        <xs:complexContent>
+            <xs:extension base="tns:entity">
+                <xs:sequence>
+                    <xs:element name="header">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="120"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="text" type="xs:string"/>
+                    <xs:element name="date" type="xs:string"/>
+                    <xs:element name="image" type="tns:image" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="created_by" type="tns:author"/>
+                    <xs:element name="access_level" type="tns:AccessLevel"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>
