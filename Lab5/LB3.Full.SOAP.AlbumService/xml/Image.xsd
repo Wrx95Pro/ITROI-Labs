@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://ua.nure.album.nure.ua/entity"
+           xmlns:tns="http://album.nure.ua/entity" elementFormDefault="qualified">
+
+    <xs:include schemaLocation="Entity.xsd"/>
+    <xs:complexType name="image">
+        <xs:complexContent>
+            <xs:extension base="tns:entity">
+                <xs:sequence>
+                    <xs:element name="image_url" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

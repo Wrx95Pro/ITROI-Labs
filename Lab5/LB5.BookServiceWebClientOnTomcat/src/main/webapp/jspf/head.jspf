@@ -1,0 +1,8 @@
+<p>
+	<a href="list">List</a> |
+	<a href="add.jsp">Add new</a> |
+	<a href="addimage.jsp">Add image</a> |
+	<a href="getimagebyurl.jsp">Find by image by url</a> |
+	<a href="removeimage.jsp">Remove image</a> |
+</p>
+<hr />
